@@ -2,11 +2,6 @@ const express = require("express");
 const app = express();
 
 // ----------------------------------------
-// App Variables
-// ----------------------------------------
-app.locals.appName = "Welcome Emails App";
-
-// ----------------------------------------
 // ENV
 // ----------------------------------------
 if (process.env.NODE_ENV !== "production") {
@@ -108,7 +103,7 @@ app.post("/emails", (req, res, next) => {
   EmailService.send(options)
     .then(result => {
       req.flash("success", "Sent!");
-      res.render("emails/new", { result });
+      res.render("welcome/index", { result });
     })
     .catch(next);
 });
