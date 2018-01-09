@@ -87,17 +87,18 @@ const EmailService = require("./services/email");
 // ----------------------------------------
 // Routes
 // ----------------------------------------
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.render("welcome/index");
 });
 
 app.post("/emails", (req, res, next) => {
+  const message = `It was a pleasure meeting you today ${req.body.email_options.fname} ${req.body.email_options.lname}`;
   const options = {
-    from: "from email here",
+    from: "tinderholmgene@gmail.com",
     to: req.body.email_options.to,
-    subject: req.body.email_options.subject,
-    text: req.body.email_options.message,
-    html: `<p>${req.body.email_options.message}</p>`
+    subject: `Welcome to our app, ${req.body.email_options.fname}!`,
+    text: message,
+    html: `<p>${message}</p>`
   };
 
   EmailService.send(options)

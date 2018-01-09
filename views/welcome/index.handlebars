@@ -1,5 +1,5 @@
 <header class="page-header text-center">
-  <h1>Create a New Email</h1>
+  <h1>User Registration</h1>
 </header>
 
 
@@ -11,18 +11,23 @@
 <form action="/emails" method="post">
 
   <div class="form-group">
-    <label for="email_options_to">To</label>
+    <label for="email_options_to">Email</label>
     <input type="text" id="email_options_to" name="email_options[to]" class="form-control">
   </div>
 
   <div class="form-group">
-    <label for="email_options_subject">Subject</label>
-    <input type="text" id="email_options_subject" name="email_options[subject]" class="form-control">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" class="form-control">
   </div>
 
   <div class="form-group">
-    <label for="email_options_message">Message</label>
-    <input type="text" id="email_options_message" name="email_options[message]" class="form-control">
+    <label for="email_options_fname">First Name</label>
+    <input type="text" id="email_options_fname" name="email_options[fname]" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="email_options_lname">Last Name</label>
+    <input type="text" id="email_options_lname" name="email_options[lname]" class="form-control">
   </div>
 
   <div class="form-group">
